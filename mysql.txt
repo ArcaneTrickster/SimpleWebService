@@ -1,0 +1,5 @@
+create database sampledb;
+use sampledb
+create user 'sampledbuser'@'%' identified by 'abc';
+grant all on sampledb.* to 'sampledbuser'@'%';
+drop user sampledbuser
