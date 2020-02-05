@@ -15,7 +15,7 @@ sql command:-
     create user 'sampledbuser'@'%' identified by 'abc';
     grant all on sampledb.* to 'sampledbuser'@'%';
     drop user sampledbuser;                             -----if neccessary----
-	-----the above sql command will create a user which you have to access from your project----------------
+	-----the above sql command will create a user in mysql which you have to access from your project----------------
 
 3) associate your project with the above user by adding these code in your 'application.properties' file
 /*
