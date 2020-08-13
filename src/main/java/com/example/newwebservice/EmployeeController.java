@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(value= "/api/employee")
+@RequestMapping(value= "/api/employee")  // this decorator specify the url for your web service. url will be http://localhost:8102/api/employee to access functions/methods of this class.
 public class EmployeeController {
     @Autowired
     Employeedao edao;
@@ -19,7 +19,7 @@ public class EmployeeController {
      * Method to fetch all employees from the db.
      * @return
      */
-    @GetMapping(value= "/getall")
+    @GetMapping(value= "/getall")  //i.e http://localhost:8102/api/employee/getall to get all data from table.
     public Iterable<Employee> getAll() {
         logger.debug("Get all employees.");
         return edao.getAllEmployees();
@@ -30,7 +30,7 @@ public class EmployeeController {
      * @param department
      * @return
      */
-    @GetMapping(value= "/department/{employee-department}")
+    @GetMapping(value= "/department/{employee-department}") //i.e http://localhost:8102/api/departmeent/Technology to get all entries with Technology department from table.
     public Iterable<Employee> getEmployeesByDepartment(@PathVariable(name= "employee-department") String department) {
         logger.debug("Getting count for department= {}.", department);
         return edao.getEmployeesByDepartment(department);
@@ -46,7 +46,7 @@ public class EmployeeController {
      * @param designation
      * @return
      */
-    @GetMapping(value= "/count/{employee-designation}")
+    @GetMapping(value= "/count/{employee-designation}")//i.e http://localhost:8102/api/employee/count/Lead to get all number of entries with Lead designation from table.
     public Integer getEmployeeCountByDesignation(@PathVariable(name= "employee-designation") String designation) {
         logger.debug("Getting count for employee-designations= {}.", designation);
         return edao.getEmployeesCountByDesignation(designation);

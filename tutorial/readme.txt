@@ -17,7 +17,7 @@ sql command:-
     drop user sampledbuser;                             -----if neccessary----
 	-----the above sql command will create a user in mysql which you have to access from your project----------------
 
-3) associate your project with the above user by adding these code in your 'application.properties' file
+3) associate your project with the above user by adding these code in your 'src/main/resources/application.properties' file
 /*
 
 	spring.jpa.hibernate.ddl-auto=update
@@ -85,4 +85,9 @@ sql command:-
 	DELIMITER ;
 
 
--------------end of mysql work....see project files---------------------
+-------------end of mysql work-------------
+4) Main project is in src/main/java :-
+	i) Employee.java is your model class also known as Entity manager class.
+  	ii) EmployeeController.java has the main methods of web service.
+  	iii) Employeedao.java is data access object, here we only call pre-made interfaces provided by spring boot to access our database.
+----see project files---------------------
